@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.warehouseCointainer{
+  background-color: blue;
+  background-image: url("../Assets/pxfuel.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+}
+.WarehouseList {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  background-color: blueviolet;
+  opacity: 0.8;
+  border-radius: 20px;
+  color: white;
+  min-height: 100vh;
+}
+.listItems {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.List {
+  background-color: black;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search {
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: transparent;
+}
+.searchBox {
+  width: 70%;
+  height: auto;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.searchBox>input {
+  width: 70%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+.searchBox button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.searchIcon {
+  color: black;
+}
+#select {
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 10px;
+}
+#live {
+  animation: 5s blink infinite ease-in-out;
+  cursor: pointer;
+}
+
+.edit{
+  cursor: pointer;
+}
+.container{
+  width: 60%;
+  background-color: black;
+  padding: 30px;
+  border-radius: 20px;
+}
+.input{
+  width: 60%;
+  height: 30px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 8px;
+}
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+#tick {
+  font-size: 1.5rem;
+  color: rgb(31, 235, 31);
+}
+#cross {
+  font-size: 1.5rem;
+  color: rgb(235, 62, 31);
+}
+@media screen and (max-width: 750px) {
+  .WarehouseList {
+    width: 100%;
+  }
+}

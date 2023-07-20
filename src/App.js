@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { WarehouseDetails, WarehouseList } from "./components";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import SignIn from "./Authication/SignIn";
+import SignUp from "./Authication/SignUp";
+import { AuthContext } from "./context/AuthContext";
+import NotFound from "./Authication/NotFound";
 
 function App() {
+  // current user details through useContext
+  const { currentUser } = useContext(AuthContext);
+  // protected route for not logged users
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to={"/"} />;
+    }
+    return children;
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter basename="warehouse">
+        <ToastContainer />
+        <Routes>
+          <Route exact path="/" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route
+            path="warehouselist"
+            element={
+              <ProtectedRoute>
+                <WarehouseList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="warehouseDetails/:id"
+            element={
+              <ProtectedRoute>
+                <WarehouseDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
