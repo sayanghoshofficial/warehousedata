@@ -19,7 +19,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter basename="warehouse">
+      <BrowserRouter basename="warehousedata">
         <ToastContainer />
         <Routes>
           <Route exact path="/" element={<SignIn />} />
