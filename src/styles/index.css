@@ -9,10 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-ul{
+ul {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
 code {
@@ -20,7 +20,7 @@ code {
     monospace;
 }
 
-.warehouseCointainer{
+.warehouseCointainer {
   background-color: blue;
   background-image: url("../Assets/pxfuel.jpg");
   display: flex;
@@ -78,7 +78,7 @@ code {
   display: flex;
   justify-content: space-between;
 }
-.searchBox>input {
+.searchBox > input {
   width: 70%;
   height: 100%;
   border: none;
@@ -103,16 +103,16 @@ code {
   cursor: pointer;
 }
 
-.edit{
+.edit {
   cursor: pointer;
 }
-.container{
+.container {
   width: 60%;
   background-color: black;
   padding: 30px;
   border-radius: 20px;
 }
-.input{
+.input {
   width: 60%;
   height: 30px;
   border: none;

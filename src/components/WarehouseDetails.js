@@ -56,101 +56,101 @@ const WarehouseDetails = () => {
   const handleLiveToggle = () => {
     setEditedData({ ...editedData, is_live: !editedData.is_live });
     setData({ ...data, is_live: !data.is_live }); // Update the data state as well
-    if(!data.is_live){
+    if (!data.is_live) {
       toast.success("Warehouse Details live now...", {
         position: "top-left",
         theme: "colored",
       });
-    }else{
+    } else {
       toast.warn("Warehouse Details inactive now...", {
         position: "top-left",
         theme: "colored",
       });
     }
-    
+
   };
 
   return (
     <div className="warehouseCointainer">
-    <div className="WarehouseList">
-    <Navbar/>
-      <div className="container">
-        <h1>
-          Name:{" "}
-          {edit ? (
-            <input
-              type="text"
-              name="name"
-              value={editedData.name}
-              onChange={handleInputChange}
-              className="input"
-            />
-          ) : (
-            <>
-              {data.name}{" "}
-              <GoDotFill
-                id="live"
-                style={{ color: dotColor }}
-                onClick={handleLiveToggle}
+      <div className="WarehouseList">
+        <Navbar />
+        <div className="container">
+          <h1>
+            Name:{" "}
+            {edit ? (
+              <input
+                type="text"
+                name="name"
+                value={editedData.name}
+                onChange={handleInputChange}
+                className="input"
               />
-            </>
-          )}{" "}
-          {edit ? (
-            <FaSave className="edit" onClick={handleSubmit} />
-          ) : (
-            <TbEdit className="edit" onClick={() => setEdit(true)} />
-          )}
-        </h1>
-        <p>Code: {data.code}</p>
-        <h3>
-          City:{" "}
-          {edit ? (
-            <input
-              type="text"
-              name="city"
-              value={editedData.city}
-              onChange={handleInputChange}
-              className="input"
-            />
-          ) : (
-            <>{data.city}</>
-          )}
-        </h3>
-        <h3>
-          Space available:{" "}
-          {edit ? (
-            <input
-              type="text"
-              name="space_available"
-              value={editedData.space_available}
-              onChange={handleInputChange}
-              className="input"
-            />
-          ) : (
-            <>{data.space_available}</>
-          )}
-        </h3>
-        <p>Type: {data.type}</p>
-        <p>
-          Cluster:{" "}
-          {edit ? (
-            <input
-              type="text"
-              name="cluster"
-              value={editedData.cluster}
-              onChange={handleInputChange}
-              className="input"
-            />
-          ) : (
-            <>{data.cluster}</>
-          )}
-        </p>
-        <p>
-          Registration:{" "}
-          {data.is_registered ? <TiTick id="tick" /> : <RxCross2 id="cross" />}
-        </p>
+            ) : (
+              <>
+                {data.name}{" "}
+                <GoDotFill
+                  id="live"
+                  style={{ color: dotColor }}
+                  onClick={handleLiveToggle}
+                />
+              </>
+            )}{" "}
+            {edit ? (
+              <FaSave className="edit" onClick={handleSubmit} />
+            ) : (
+              <TbEdit className="edit" onClick={() => setEdit(true)} />
+            )}
+          </h1>
+          <p>Code: {data.code}</p>
+          <h3>
+            City:{" "}
+            {edit ? (
+              <input
+                type="text"
+                name="city"
+                value={editedData.city}
+                onChange={handleInputChange}
+                className="input"
+              />
+            ) : (
+              <>{data.city}</>
+            )}
+          </h3>
+          <h3>
+            Space available:{" "}
+            {edit ? (
+              <input
+                type="text"
+                name="space_available"
+                value={editedData.space_available}
+                onChange={handleInputChange}
+                className="input"
+              />
+            ) : (
+              <>{data.space_available}</>
+            )}
+          </h3>
+          <p>Type: {data.type}</p>
+          <p>
+            Cluster:{" "}
+            {edit ? (
+              <input
+                type="text"
+                name="cluster"
+                value={editedData.cluster}
+                onChange={handleInputChange}
+                className="input"
+              />
+            ) : (
+              <>{data.cluster}</>
+            )}
+          </p>
+          <p>
+            Registration:{" "}
+            {data.is_registered ? <TiTick id="tick" /> : <RxCross2 id="cross" />}
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

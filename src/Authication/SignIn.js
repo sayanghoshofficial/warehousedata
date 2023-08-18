@@ -58,7 +58,7 @@ const SignIn = () => {
     <div className="splitScreen">
       <div className="left">
         <section className="copy">
-          <img alt="logo" src={Logo}/>
+          <img alt="logo" src={Logo} />
         </section>
       </div>
       <div className="right">

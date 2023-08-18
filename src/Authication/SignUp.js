@@ -25,10 +25,10 @@ const SignUp = () => {
     const displayName = e.target[1].value?.trim();
     const email = e.target[2].value?.trim();
     const password = e.target[3].value?.trim();
-    if(!displayName){
-      return toast.warn("Please Provide Your Name",{
-        position:"top-left",
-        theme:"colored"
+    if (!displayName) {
+      return toast.warn("Please Provide Your Name", {
+        position: "top-left",
+        theme: "colored"
       })
     }
     if (password.length < 6) {
@@ -48,9 +48,9 @@ const SignUp = () => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          toast.error(errorMessage,{
-            position:"top-left",
-            theme:"colored"
+          toast.error(errorMessage, {
+            position: "top-left",
+            theme: "colored"
           })
           // ..
         });
@@ -77,7 +77,7 @@ const SignUp = () => {
     <div className="splitScreen">
       <div className="left">
         <section className="copy">
-        <img alt="logo" src={Logo}/>
+          <img alt="logo" src={Logo} />
         </section>
       </div>
       <div className="right">
@@ -97,11 +97,11 @@ const SignUp = () => {
           </button>
           <div className="inputCointainer name">
             <label htmlFor="fname">Full Name</label>
-            <input id="fname" name="fname" type="text" required/>
+            <input id="fname" name="fname" type="text" required />
           </div>
           <div className="inputCointainer email">
             <label htmlFor="email">Email address</label>
-            <input id="email" name="email" type="email" required/>
+            <input id="email" name="email" type="email" required />
           </div>
           <div className="inputCointainer password">
             <label htmlFor="password">Password</label>

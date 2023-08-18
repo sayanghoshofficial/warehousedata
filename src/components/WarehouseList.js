@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { WareHouseData } from "../Data/Data";
 import List from "./List";
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase";
 import Navbar from "./Navbar";
 
 const WarehouseList = () => {
@@ -22,7 +20,7 @@ const WarehouseList = () => {
       selectRef.current.value === "cluster"
         ? tempSearchTerm.toLowerCase()
         : tempSearchTerm.charAt(0).toUpperCase() +
-          tempSearchTerm.slice(1).toLowerCase();
+        tempSearchTerm.slice(1).toLowerCase();
     const selectedOption = selectRef.current.value; // Get the value of the selected option
     // Check if the selected option is "space" and the input value is a valid number
     let filteredResults = WareHouseData;
@@ -35,7 +33,7 @@ const WarehouseList = () => {
         position: "top-left",
         theme: "colored",
       });
-    }else if (selectedOption === "cluster") {
+    } else if (selectedOption === "cluster") {
       // Filter by cluster
       filteredResults = filteredResults.filter((warehouse) =>
         warehouse.cluster.toLowerCase().includes(formattedSearchTerm)
@@ -44,7 +42,7 @@ const WarehouseList = () => {
         position: "top-left",
         theme: "colored",
       });
-    }else if (selectedOption === "space") {
+    } else if (selectedOption === "space") {
       // Filter by space available limit (e.g., greater than or equal to the input number)
       const spaceLimit = parseInt(tempSearchTerm);
       if (isNaN(spaceLimit)) {
@@ -64,7 +62,7 @@ const WarehouseList = () => {
           theme: "colored",
         });
       }
-    }else {
+    } else {
       // Default search by name (if no option is selected)
       filteredResults = filteredResults.filter((warehouse) =>
         warehouse.name.toLowerCase().includes(formattedSearchTerm.toLowerCase())
@@ -74,8 +72,8 @@ const WarehouseList = () => {
         theme: "colored",
       });
     }
-   
-   
+
+
 
     setFilteredWarehouses(filteredResults);
 
@@ -86,33 +84,33 @@ const WarehouseList = () => {
 
   return (
     <>
-    <div className="warehouseCointainer">
-      
-      <div className="WarehouseList">
-      <Navbar/>
-        <form className="search" onSubmit={handleSubmit}>
-          <div className="searchBox">
-            <input type="text" placeholder="Enter item...." ref={searchText} />
-            <select name="Select" id="select" ref={selectRef}>
-              <option value="">Select Type</option>
-              <option value="city">City</option>
-              <option value="cluster">Cluster</option>
-              <option value="space">Space</option>
-            </select>
-            <button type="submit">
-              <FaSearch size={32} className="searchIcon" />
-            </button>
+      <div className="warehouseCointainer">
+
+        <div className="WarehouseList">
+          <Navbar />
+          <form className="search" onSubmit={handleSubmit}>
+            <div className="searchBox">
+              <input type="text" placeholder="Enter item...." ref={searchText} />
+              <select name="Select" id="select" ref={selectRef}>
+                <option value="">Select Type</option>
+                <option value="city">City</option>
+                <option value="cluster">Cluster</option>
+                <option value="space">Space</option>
+              </select>
+              <button type="submit">
+                <FaSearch size={32} className="searchIcon" />
+              </button>
+            </div>
+          </form>
+          {error && <div className="error">{error}</div>}
+          <div className="listItems">
+            {filteredWarehouses.length > 0 ? (
+              filteredWarehouses.map((w, i) => <List data={w} key={i} />)
+            ) : (
+              <div>No warehouses found.</div>
+            )}
           </div>
-        </form>
-        {error && <div className="error">{error}</div>}
-        <div className="listItems">
-        {filteredWarehouses.length > 0 ? (
-          filteredWarehouses.map((w, i) => <List data={w} key={i} />)
-        ) : (
-          <div>No warehouses found.</div>
-        )}
         </div>
-      </div>
       </div>
     </>
   );

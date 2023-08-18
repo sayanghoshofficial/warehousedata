@@ -1,113 +1,113 @@
 .small {
-    font-size: 80%;
-    text-align: center;
-  }
+  font-size: 80%;
+  text-align: center;
+}
+.splitScreen {
+  display: flex;
+  flex-direction: column;
+}
+.right {
+  background-color: #f5f5f5;
+}
+.left {
+  height: 200px;
+}
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  background-color: blue;
+}
+.left .copy {
+  color: white;
+  text-align: center;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+}
+.left p {
+  font-weight: 400;
+}
+.right .copy {
+  color: black;
+  text-align: center;
+}
+.right .copy p {
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+.right form {
+  width: 328px;
+}
+form input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding: 1em;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+.inputCointainer .password {
+  position: relative;
+}
+.inputCointainer .password i {
+  position: relative;
+  top: -54px;
+  right: -296px;
+}
+.signupBtn {
+  display: block;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  text-decoration: uppercase;
+  letter-spacing: 0.5px;
+}
+.activeS {
+  background-color: #817979;
+}
+.google {
+  color: gray;
+  background-color: white;
+}
+.google img {
+  width: 15px;
+  margin-right: 10px;
+}
+.signupBtn:hover {
+  background: grey;
+  color: #000;
+  cursor: pointer;
+}
+.google:hover {
+  background: grey;
+}
+@media screen and (min-width: 900px) {
   .splitScreen {
-    display: flex;
-    flex-direction: column;
-  }
-  .right{
-      background-color: #f5f5f5;
-  }
-  .left {
-    height: 200px;
+    flex-direction: row;
+    height: 100vh !important;
   }
   .left,
   .right {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    height: auto;
   }
-  .left {
-    background-color: blue;
-  }
-  .left .copy {
-    color: white;
-    text-align: center;
-    --webkit-font-smoothing: antialiased;
-    --moz-osx-font-smoothing: grayscale;
-  }
-  .left p {
-    font-weight: 400;
-  }
-  .right .copy {
-    color: black;
-    text-align: center;
-  }
-  .right .copy p {
-    margin: 1.5rem 0;
-    font-size: 0.875rem;
-  }
-  .right form {
-    width: 328px;
-  
-  }
-  form input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      padding: 1em;
-      margin-bottom: 1.25rem;
-      font-size: 0.875rem;
-  }
-  label{
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.75rem;
-  }
-  .inputCointainer .password{
-      position: relative;
-  }
-  .inputCointainer .password i{
-    position: relative;
-    top: -54px;
-    right: -296px;
-  }
-  .signupBtn{
-      display: block;
-      width: 100%;
-      background-color: black;
-      color:white;
-      font-weight: 700;
-      border: none;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      text-decoration: uppercase;
-      letter-spacing: 0.5px;
-  }
-  .activeS{
-    background-color: #817979;
-  }
-  .google{
-      color: gray;
-      background-color: white;
-  }
-  .google img{
-      width: 15px;
-      margin-right: 10px;
-  }
-  .signupBtn:hover{
-      background: grey;
-      color: #000;
-      cursor: pointer;
-  }
-  .google:hover{
-      background: grey;
-  }
-  @media screen and (min-width:900px) {
-      .splitScreen{
-          flex-direction: row;
-          height: 100vh !important;
-      }
-      .left, .right{
-          display: flex;
-          width: 50%;
-          height: auto;
-      }
-  }
+}

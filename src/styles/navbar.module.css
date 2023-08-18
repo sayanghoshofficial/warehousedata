@@ -1,129 +1,129 @@
 .main {
-    position: relative;
-    padding: 0 2 rem;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .navbar {
-    top: 0;
-    width: 100%;
-    height: 50px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: blue;
-    color: white;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .logo img {
-    margin-top: 2px;
-    width: 90px;
-  }
-  .link {
-    display: flex;
-    gap: 2rem;
-  }
-  .link li a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .user{
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .userimg{
-    width: 32px;
-    border-radius: 50%;
-  }
-  .toggleBtn {
-    /* position: fixed; */
-    z-index: 20;
-    color: #fff;
-    cursor: pointer;
+  position: relative;
+  padding: 0 2 rem;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.navbar {
+  top: 0;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: blue;
+  color: white;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo img {
+  margin-top: 2px;
+  width: 90px;
+}
+.link {
+  display: flex;
+  gap: 2rem;
+}
+.link li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.user {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.userimg {
+  width: 32px;
+  border-radius: 50%;
+}
+.toggleBtn {
+  /* position: fixed; */
+  z-index: 20;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+.toggleBtn img {
+  width: 1.5rem;
+}
+.actionBtn {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+.actionBtn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+.actionBtn:active {
+  scale: 0.95;
+}
+/* Dropdown Menu */
+.dropDownMenu {
+  /* position: fixed; */
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: black;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+
+.dropDownMenu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropDownMenu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dropDownMenu .actionBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 992px) {
+  .dropDownMenu {
     display: none;
   }
-  .toggleBtn img {
-    width: 1.5rem;
+}
+@media (max-width: 992px) {
+  .link,
+  .navbar .actionBtn {
+    display: none;
   }
-  .actionBtn {
-    background-color: orange;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: scale 0.2 ease;
+  .toggleBtn {
+    display: block;
   }
-  .actionBtn:hover {
-    scale: 1.05;
-    color: #fff;
-  }
-  .actionBtn:active {
-    scale: 0.95;
-  }
-  /* Dropdown Menu */
   .dropDownMenu {
-    /* position: fixed; */
-    right: 2rem;
-    top: 60px;
-    width: 300px;
-    background: black;
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 10;
+    display: block;
   }
-  
-  .dropDownMenu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+@media (max-width: 576px) {
+  .dropDownMenu {
+    left: 2rem;
+    width: unset;
   }
-  .dropDownMenu li a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .dropDownMenu .actionBtn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Responsive Design */
-  @media (min-width: 992px) {
-    .dropDownMenu {
-      display: none;
-    }
-  }
-  @media (max-width: 992px) {
-    .link,
-    .navbar .actionBtn {
-      display: none;
-    }
-    .toggleBtn {
-      display: block;
-    }
-    .dropDownMenu {
-      display: block;
-    }
-  }
-  @media (max-width: 576px) {
-    .dropDownMenu {
-      left: 2rem;
-      width: unset;
-    }
-  }
+}
